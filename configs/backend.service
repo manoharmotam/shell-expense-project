@@ -1,0 +1,17 @@
+[Unit]
+Description=Expense Backend Service
+After=network.target
+
+[Service]
+User=expense
+Environment=DB_HOST=mysqldb.mrmotam.online
+Environment=DB_USER=expense
+Environment=DB_PWD=ExpenseApp@1
+Environment=DB_DATABASE=transactions
+ExecStart=/bin/node /app/index.js
+SyslogIdentifier=backend
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
