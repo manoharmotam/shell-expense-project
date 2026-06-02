@@ -39,3 +39,8 @@ VALIDATE $? "Removing existing Default nginx configuration"
 
 cp "$SCRIPTDIR"/configs/loadbalancer.conf /etc/nginx/nginx.conf
 VALIDATE $? "Updating the nginx config for services routing"
+
+systemctl daemon-reload
+systemctl enable nginx &>> "$LOGS_FILE"
+systemctl start nginx
+VALIDATE $? "Enabling and starting nginx"
