@@ -62,6 +62,6 @@ mysql -h mysqldb.mrmotam.online -u root -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Loading the database schema"
 
 systemctl daemon-reload
-systemctl enable catalogue &>> $LOGS_FILE
-systemctl start catalogue
+systemctl enable backend &>> $LOGS_FILE
+systemctl start backend
 VALIDATE $? "Enabling and starting the cataloge services"

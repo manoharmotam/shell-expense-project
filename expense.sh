@@ -58,7 +58,7 @@ do
     aws  --no-cli-pager route53 change-resource-record-sets --hosted-zone-id $ZONEID \
         --change-batch '
             {
-                "Comment": "Creating an A record for '$R53_RECORD'",
+                "Comment": "Creating an A record for '$R53_RECORD' with IP '$IP'",
                 "Changes": [
                         {
                         "Action": "UPSERT",
@@ -72,5 +72,5 @@ do
                 ]
             }
         '
-    echo -e "$GREEN Updated the R53 Record for $instance $NOCOLOR"
+    echo -e "$GREEN Updated the R53 Record for $instance $NOCOLOR "
 done
