@@ -34,7 +34,7 @@ dnf module enable nodejs:20 -y &>> $LOGS_FILE
 dnf install nodejs -y &>> $LOGS_FILE
 VALIDATE $? "Enabling and installing the NodeJS 20"
 
-id roboshop &>> $LOGS_FILE
+id expense &>> $LOGS_FILE
 if [ $? -ne 0 ]; then
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" expense
     VALIDATE $? "Creating the user for the application"
