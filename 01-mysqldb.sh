@@ -11,7 +11,7 @@ sudo chmod -R 755 $LOGS_FOLDER
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 TIMESTAMP=$(date '+%Y-%m-%d %T')
 
-#user validation
+#user validation   
 if [ $(id -u) -ne 0 ]; then
     echo -e "$RED Please run this script as Root User $NOCOLOR" | tee -a $LOGS_FILE
     exit 1
